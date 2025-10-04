@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 52e167d09f5dc77418376e6daa46ae26
+guid: fe21ff2a25890eb47876814b0bfa225f
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 2158512995093932765
-    second: brine_knight_0
+      213: -110684572961385351
+    second: brain_coral_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: brine_knight_0
+      name: brain_coral_0
       rect:
         serializedVersion: 2
-        x: 56
-        y: 0
-        width: 144
-        height: 256
+        x: 3
+        y: 36
+        width: 253
+        height: 178
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: dda63abf12494fd10800000000000000
-      internalID: 2158512995093932765
+      spriteID: 9745582a7f4c67ef0800000000000000
+      internalID: -110684572961385351
       vertices: []
       indices: 
       edges: []

@@ -2,12 +2,12 @@ using UnityEngine;
 
 public class Movement : MonoBehaviour
 {
-    [SerializeField] private float moveSpeed = 5f;
+    [SerializeField] private float moveSpeed = 10f;
     [SerializeField] private float sprintMultiplier = 1.75f;
 
-    [SerializeField] private float jumpForce = 15f;
-    [SerializeField] private float jumpHoldMultiplier = 2f;
-    [SerializeField] private float maxJumpHoldTime = 1.5f;
+    [SerializeField] private float jumpForce = 18f;
+    [SerializeField] private float jumpHoldMultiplier = 3f;
+    [SerializeField] private float maxJumpHoldTime = 0.75f;
 
     [SerializeField] private Rigidbody2D rb;
 
