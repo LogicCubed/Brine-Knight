@@ -3,7 +3,7 @@ using UnityEngine;
 public class Movement : MonoBehaviour
 {
     [SerializeField] private float moveSpeed = 10f;
-    [SerializeField] private float sprintMultiplier = 1.75f;
+    [SerializeField] private float sprintMultiplier = 2f;
 
     [SerializeField] private float jumpForce = 18f;
     [SerializeField] private float jumpHoldMultiplier = 3f;
@@ -17,9 +17,11 @@ public class Movement : MonoBehaviour
 
     private bool isJumping;
     private float jumpTimeCounter;
+    private bool isGrounded;
 
     private void Update()
     {
+        isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer);
         HandleJump();
     }
 
@@ -32,7 +34,7 @@ public class Movement : MonoBehaviour
     {
         float moveX = Input.GetAxisRaw("Horizontal");
 
-        bool isSprinting = Input.GetMouseButton(1);
+        bool isSprinting = Input.GetMouseButton(1) && isGrounded;
 
         if (moveX != 0)
         {
@@ -47,8 +49,6 @@ public class Movement : MonoBehaviour
 
     private void HandleJump()
     {
-        bool isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer);
-
         if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
         {
             isJumping = true;
@@ -61,7 +61,7 @@ public class Movement : MonoBehaviour
             if (jumpTimeCounter < maxJumpHoldTime)
             {
                 rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce + jumpHoldMultiplier * jumpTimeCounter);
-                jumpTimeCounter += Time.fixedDeltaTime;
+                jumpTimeCounter += Time.deltaTime;
             }
         }
 
